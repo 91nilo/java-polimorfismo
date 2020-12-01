@@ -1,8 +1,9 @@
 
 public class Funcionario {
+	
 	private String nome;
 	private String cpf;
-	private double salario;
+	private double salario; //as classes-filho conseguem ver o atributo, outras não.
 	private int tipo = 0; // 0 - Funcionário Comum ; 1 - Gerente; 2 - Diretor;
 	
 	public Funcionario(String nome, String cpf, double salario) {
@@ -17,7 +18,7 @@ public class Funcionario {
 	public double getBonificacao() {
 		
 		if(this.tipo == 0) {
-			return this.salario * 0.1;
+			return this.salario * 0.05;
 		} else if(this.tipo == 1) {
 			return this.salario;
 		}else {
@@ -57,5 +58,8 @@ public class Funcionario {
 		this.salario = salario;
 	}
 	
+	public String toString() {
+		return "Nome: " + this.nome + "\nCPF: " + this.cpf + "\nSalário: " + this.salario;
+	}
 	
 }
